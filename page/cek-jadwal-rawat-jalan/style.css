@@ -1,0 +1,293 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: #ffffff;
+}
+
+section {
+    scroll-margin-top: 80px;
+}
+
+.bg-light-green {
+    background-color: #9bb7a2;
+    min-height: 100vh;
+}
+
+.nav-container {
+    padding: 30px 70px;
+}
+
+.active-pill {
+    background: #1f4f43 !important; 
+}
+
+.jadwal-section {
+    padding: 20px 70px 80px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.header-jadwal {
+    text-align: center;
+    color: white;
+    margin-bottom: 40px;
+}
+
+.header-jadwal h1 {
+    font-size: 42px;
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+.header-jadwal p {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.table-container {
+    background: white;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+}
+
+.jadwal-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.jadwal-table thead {
+    background-color: #1f4f43;
+    color: white;
+}
+
+.jadwal-table th {
+    padding: 20px;
+    text-align: left;
+    font-weight: 700;
+}
+
+.jadwal-table td {
+    padding: 18px 20px;
+    border-bottom: 1px solid #eee;
+    color: #333;
+}
+
+.jadwal-table tr:last-child td {
+    border-bottom: none;
+}
+
+.footer-actions {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.btn-booking-now {
+    display: inline-block;
+    background: #1f4f43;
+    color: white;
+    padding: 15px 40px;
+    border-radius: 40px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: 0.3s;
+}
+
+.btn-booking-now:hover {
+    background: white;
+    color: #1f4f43;
+    transform: translateY(-3px);
+}
+
+
+.footer {
+    background: #1f4d42;
+    color: #ffffff;
+    padding: 40px 0 0;
+    font-size: 14px;
+}
+
+.footer-container {
+    max-width: 960px;
+    padding: 0 24px;
+
+    display: grid;
+    grid-template-columns: 500px 500px 700px;
+    gap: 12px;
+}
+
+
+.footer-logo {
+    font-size: 36px;
+    margin-bottom: 2px;
+}
+
+.footer-subtitle {
+    font-size: 15px;
+    margin-bottom: 40px;
+    opacity: 0.9;
+}
+
+.footer-col img {
+    width: 170px;
+}
+
+.footer-col h4 {
+    font-size: 15px;
+    margin-bottom: 2px;
+    padding-top: 10px;
+}
+
+.footer-col p {
+    font-size: 13px;
+    line-height: 1.6;
+    padding-left: 18px;
+    opacity: 0.9;
+}
+
+.footer-col a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 13px;
+    line-height: 1.6;
+    opacity: 0.9;
+    margin-left: 10px;
+}
+
+.footer-col ul {
+    list-style: disc;
+    padding-left: 18px;
+}
+
+.footer-col ul li {
+    margin-bottom: 8px;
+    line-height: 1.5;
+    opacity: 0.9;
+}
+
+.hubungi-follow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  margin-top: 20px;
+}
+
+.hubungi-follow h4 {
+  padding-top: 0;
+}
+
+.footer-location {
+  margin-top: 14px;
+}
+
+.map-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #ffffff;
+  font-size: 13px;
+  text-decoration: none;
+  opacity: 0.9;
+}
+
+.map-link:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+.map-icon {
+  font-size: 18px;
+}
+
+.map-svg {
+  width: 16px;
+  height: 16px;
+  fill: #ffffff;
+}
+
+.footer-bottom {
+    padding-top: 60px;
+    padding-bottom: 20px;
+    text-align: center;
+    font-size: 15px;
+    opacity: 0.85;
+}
+
+
+@media (max-width: 1024px) {
+    .nav-container, .jadwal-section {
+        padding: 20px 30px;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr 1fr; 
+        max-width: 100%;
+        gap: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-pill {
+        flex-direction: column; 
+        border-radius: 20px;
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-link {
+        padding: 15px 0;
+    }
+
+    .header-jadwal h1 {
+        font-size: 28px; 
+    }
+
+    .table-container {
+        overflow-x: auto; 
+    }
+
+    .jadwal-table th, .jadwal-table td {
+        padding: 12px 10px;
+        font-size: 13px;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr; 
+    }
+
+    .footer-col img {
+        margin: 0 auto;
+    }
+
+    .hubungi-follow {
+        grid-template-columns: 1fr; 
+        gap: 20px;
+        text-align: start;
+    }
+
+    .footer-col ul, .footer-col p {
+        padding-left: 20px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr; 
+        gap: 15px;
+    }
+
+    .form-footer {
+        flex-direction: column-reverse;
+    }
+
+    .btn-reset, .btn-submit {
+        width: 100%; 
+    }
+}
