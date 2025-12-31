@@ -19,7 +19,7 @@ section {
 
 .container-hero {
     background: linear-gradient(to right, #255C4F, #042021);
-    height: 130vh;
+    height: 100vh;
 }
 
 .navbar {
@@ -354,6 +354,7 @@ p {
 .profile {
     background: linear-gradient(to bottom, #95BCA2, #153F35);
     padding-top: 80px;
+    width: 100vw;
 }
 
 .profile h2 {
@@ -414,6 +415,8 @@ p {
 
 .info-section {
     padding: 18px 150px;
+    width: 100vw;
+
 }
 
 .info-grid {
