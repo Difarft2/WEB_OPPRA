@@ -27,10 +27,11 @@ document.getElementById('pilih-poli').addEventListener('change', function() {
     const selectDokter = document.getElementById('pilih-dokter'); 
     
     // Kosongkan pilihan dokter lama
-    selectDokter.innerHTML = "";
+    selectDokter.innerHTML = '<option value="">-- Pilih Dokter & Jadwal --</option>';
 
     let options = "";
 
+    // Logika pemilihan berdasarkan ID Poli
     if (poli === 'umum') {
         options = `
             <option>Dr. Stella Pravita Sp.PD | Senin - Kamis | 08.00 - 21.00</option>
@@ -38,8 +39,8 @@ document.getElementById('pilih-poli').addEventListener('change', function() {
         `;
     } else if (poli === 'kia-kb') {
         options = `
+            <option>Bidan Siti Aminah, S.ST | Senin - Sabtu | 08.00 - 15.00</option>
             <option>Dr. Siti Aminah Sp.OG | Senin & Rabu | 10.00 - 14.00</option>
-            <option>Bidan Rina | Selasa & Kamis | 08.00 - 12.00</option>
         `;
     } else if (poli === 'gigi') {
         options = `
@@ -48,7 +49,7 @@ document.getElementById('pilih-poli').addEventListener('change', function() {
         `;
     } else if (poli === 'syaraf') {
         options = `
-            <option>Dr. Hendra Sp.S | Selasa & Kamis | 13.00 - 17.00</option>
+            <option>Dr. Hendra Sp.S | Rabu & Kamis | 14.00 - 17.00</option>
         `;
     } else if (poli === 'anak') {
         options = `
@@ -57,15 +58,15 @@ document.getElementById('pilih-poli').addEventListener('change', function() {
         `;
     } else if (poli === 'gastro') {
         options = `
-            <option>Dr. Lukman Sp.PD-KGEH | Rabu | 10.00 - 13.00</option>
+            <option>Dr. Aris Sp.PD-KGEH | Selasa & Jumat | 10.00 - 13.00</option>
         `;
     } else if (poli === 'endokrin') {
         options = `
-            <option>Dr. Sari Sp.PD-KEMD | Jumat | 14.00 - 17.00</option>
+            <option>Dr. Linda Sp.PD-KEMD | Senin & Rabu | 16.00 - 19.00</option>
         `;
     } else if (poli === 'jantung') {
         options = `
-            <option>Dr. Yusuf Sp.JP | Senin & Kamis | 09.00 - 12.00</option>
+            <option>Dr. Yusuf Sp.JP | Selasa & Kamis | 08.00 - 11.00</option>
         `;
     } else if (poli === 'mata') {
         options = `
@@ -74,7 +75,7 @@ document.getElementById('pilih-poli').addEventListener('change', function() {
         `;
     }
 
-    selectDokter.innerHTML = options;
+    selectDokter.innerHTML += options;
 });
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -86,10 +87,19 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 document.querySelector('form').addEventListener('submit', function(e) {
-    e.preventDefault(); // Mencegah halaman reload
+    e.preventDefault();
+
+    const nama = document.querySelector('input[placeholder="...."]').value; 
+    const poli = document.getElementById('pilih-poli').value;
+    const dokter = document.getElementById('pilih-dokter').value;
     
-    // Tampilkan popup
-    document.getElementById('popup-success').style.display = 'flex';
+    if (nama === "" || poli === "" || dokter === "") {
+        // Tampilkan popup gagal
+        document.getElementById('popup-failed').style.display = 'flex';
+    } else {
+        // Tampilkan popup sukses
+        document.getElementById('popup-success').style.display = 'flex';
+    }
 });
 
 function closePopup() {
@@ -99,4 +109,8 @@ function closePopup() {
     document.querySelector('form').reset();
     // Jalankan kembali update dokter agar kembali ke default (Umum)
     document.getElementById('pilih-poli').dispatchEvent(new Event('change'));
+}
+
+function closePopupFailed() {
+    document.getElementById('popup-failed').style.display = 'none';
 }

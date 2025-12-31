@@ -487,6 +487,17 @@ button a {
     margin: 0 auto 20px;
 }
 
+.failed-icon {
+    width: 70px;
+    height: 70px;
+    background: #ff0000;
+    color: white;
+    font-size: 40px;
+    line-height: 70px;
+    border-radius: 50%;
+    margin: 0 auto 20px;
+}
+
 .popup-content h2 {
     color: #1f4f43;
     margin-bottom: 15px;
@@ -524,7 +535,6 @@ button a {
 .footer-container {
     max-width: 960px;
     padding: 0 24px;
-
     display: grid;
     grid-template-columns: 500px 500px 700px;
     gap: 12px;
